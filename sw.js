@@ -1,4 +1,4 @@
-const CACHE = "allowance-pwa-v2";
+const CACHE = "allowance-pwa-v3";
 const ASSETS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
