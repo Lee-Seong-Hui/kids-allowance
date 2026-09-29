@@ -1,0 +1,16 @@
+{
+  "name": "우리 아이 용돈관리",
+  "short_name": "용돈관리",
+  "description": "아이별 월용돈과 친인척 용돈을 구분해 관리하는 앱",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f6fb",
+  "theme_color": "#6d5dfc",
+  "lang": "ko-KR",
+  "icons": [
+    {"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
