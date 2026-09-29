@@ -6,10 +6,10 @@
 <meta name="theme-color" content="#6d5dfc">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="용돈관리">
+<meta name="apple-mobile-web-app-title" content="Money management">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<title>우리 아이 용돈관리</title>
+<title>My child's allowance management</title>
 <style>
 :root{--primary:#6d5dfc;--bg:#f5f6fb;--card:#fff;--text:#20232d;--muted:#7c8190;--line:#e8e9ef;--red:#e85b67;--green:#24a36a}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans KR",sans-serif;background:var(--bg);color:var(--text)}
@@ -19,7 +19,7 @@ header{padding:22px 18px 12px;background:linear-gradient(135deg,#7566ff,#5b8def)
 main{padding:14px}.child-card{background:var(--card);border-radius:20px;padding:18px;margin-bottom:14px;box-shadow:0 4px 18px #24245a0b}.child-top{display:flex;justify-content:space-between;align-items:center}.child-name{font-size:19px;font-weight:800}.badge{font-size:12px;background:#eeeafd;color:var(--primary);padding:5px 9px;border-radius:20px}
 .balance{font-size:31px;font-weight:900;margin:12px 0 16px}.balance small{font-size:13px;color:var(--muted);font-weight:600}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:#f7f7fa;border-radius:13px;padding:10px}.stat small{display:block;color:var(--muted);font-size:11px}.stat b{display:block;margin-top:4px;font-size:14px}
 .section-title{font-size:17px;font-weight:800;margin:20px 3px 10px}.row{display:flex;justify-content:space-between;align-items:center;padding:13px 3px;border-bottom:1px solid var(--line);gap:10px}.row:last-child{border-bottom:0}.row-main{min-width:0;flex:1}.desc{font-size:14px;word-break:break-all}.date{font-size:11px;color:var(--muted);margin-top:3px}.amount.plus{color:var(--green)}.amount.minus{color:var(--red)}.row-actions{display:flex;gap:5px;margin-top:5px;justify-content:flex-end}.small-btn{padding:6px 8px;border-radius:8px;background:#f0f1f5;color:#555;font-size:11px;font-weight:700}.small-btn.delete{background:#fff0f1;color:var(--red)}
-.fab{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:var(--primary);color:#fff;font-size:29px;box-shadow:0 8px 22px #4c3ee455}.overlay{display:none;position:fixed;inset:0;background:#0007;z-index:20;align-items:flex-end}.overlay.show{display:flex}.modal{background:#fff;width:100%;max-width:760px;margin:auto 0 0;border-radius:24px 24px 0 0;padding:20px;max-height:90vh;overflow:auto}.modal h2{margin:0 0 16px;font-size:20px}
+.fab{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:var(--primary);color:#fff;font-size:29px;box-shadow:0 8px 22px #4c3ee455}.overlay{display:none;position:fixed;inset:0;background:#0007;z-index:20;align-items:flex-end}.background.show{display:flex}.modal{background:#fff;width:100%;max-width:760px;margin:auto 0 0;border-radius:24px 24px 0 0;padding:20px;max-height:90vh;overflow:auto}.modal h2{margin:0 0 16px;font-size:20px}
 label{display:block;font-size:12px;color:var(--muted);font-weight:700;margin:12px 0 6px}.input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff}.actions{display:flex;gap:8px;margin-top:18px}.actions button{flex:1;padding:13px;border-radius:12px;font-weight:800}.save{background:var(--primary);color:#fff}.cancel{background:#f0f1f5}.empty{text-align:center;color:var(--muted);padding:28px 5px;font-size:13px}
 .settings{background:#fff;border-radius:18px;padding:16px;margin-bottom:14px}.setting-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}.setting-row:last-child{border-bottom:0}.danger{color:var(--red)}.note{font-size:12px;color:var(--muted);line-height:1.6;margin-top:8px}.month-nav{display:flex;align-items:center;gap:8px;background:#fff;padding:10px;border-radius:14px;margin-bottom:12px}.month-nav button{width:38px;height:38px;border-radius:10px;background:#f0f1f5}.month-nav input{flex:1;text-align:center}.kind-item{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);gap:8px}.kind-info{flex:1}.kind-name{font-weight:700}.kind-type{font-size:11px;color:var(--muted);margin-top:3px}.income-label{color:var(--green);font-weight:700}.expense-label{color:var(--red);font-weight:700}
 @media(min-width:700px){.modal{margin:auto;border-radius:24px;max-width:520px}}
@@ -27,7 +27,7 @@ label{display:block;font-size:12px;color:var(--muted);font-weight:700;margin:12p
 </head>
 <body>
 <div class="app">
-<header><h1>우리 아이 용돈관리</h1><p>월용돈과 받은 용돈을 구분해서 관리해요</p><button id="installPwaBtn" onclick="installPwa()" style="display:none;margin:10px 18px 0 auto;padding:9px 13px;border-radius:12px;background:#fff;color:#5f51e8;font-weight:800">📱 홈 화면에 설치</button></header>
+<header><h1>My child's allowance management</h1><p>Manage monthly allowance separately</p><button id="installPwaBtn" onclick="installPwa()" style="display:none;margin:10px 18px 0 auto;padding:9px13px;background:#fff;color:#5f51e8;font-weight:800">Home>
 <div class="tabs"><button class="tab active" data-tab="home">전체</button><button class="tab" data-tab="child1" id="tabC1">초3</button><button class="tab" data-tab="child2" id="tabC2">초6</button><button class="tab" data-tab="monthly">월별</button><button class="tab" data-tab="settings">설정</button></div>
 <main id="content"></main></div><button class="fab" id="addBtn">＋</button>
 
